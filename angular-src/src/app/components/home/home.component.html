@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="jumbotron text-center">
+    <h1>MEAN Chat App</h1>
+    <p class="lead">Welcome to my chat application built using the MEAN stack!</p>
+    <div *ngIf="!this.authService.loggedIn()">
+      <a class="btn btn-primary" [routerLink]="['/register']">Register</a>
+      <span style="margin-left:4px; margin-right:4px;">or</span>
+      <a class="btn btn-info" [routerLink]="['/login']">Login</a>
+    </div>
+
+    <div *ngIf="this.authService.loggedIn()">
+      <a class="btn btn-primary" [routerLink]="['/chat']">Chat Room</a>
+    </div>
+  </div>
+</div>
